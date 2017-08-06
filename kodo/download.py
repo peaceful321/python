@@ -97,8 +97,9 @@ def download(bucketName, key, localPath):
         f.write(resp.content)
 
 
+#程序的主入口，类似java 的main 函数
 if(__name__ == "__main__"):
     bucketName = "test-bucket"
-    key = "stage.jpg"
+    key = "stage111.jpg"
     localPath = "/Users/ryanxu/Documents"
     download(bucketName, key, localPath)
