@@ -54,3 +54,40 @@ with open('/Users/ryanxu/Documents/admin/LinuxCMD/test.txt', 'r', encoding='gbk'
 with open("/Users/ryanxu/Documents/admin/LinuxCMD/test_10_10.txt", 'w') as f_w:
     f_w.write("Hello world")
 
+
+
+#####################################################################################################################################################
+
+#很多时候， 数据读写不一定都是 文件， 也可以在内存中读写； 此时可以通过StringIO 来实现
+from io import StringIO
+
+f_str = StringIO()
+size = f_str.write('hello world') #返回 字符串 length
+print(f_str.getvalue())           # 获取写入后的str
+
+
+#要读取StringIO, 可以用一个str 初始化StringIO, 然后， 像读文件一样读取
+
+f_init = StringIO("Ryan xu\n Anne \n Solo")
+while True:
+    s = f_init.readline()
+    if s == "":
+        break
+    print(s)
+
+
+#BytesIO
+#StringIO 操作的只能是str， 如果要操作 二进制文件， 则需要使用BytesIO
+#BytesIO 实现了在内存中读写bytes， 我们创建一个BytesIO, 然后写入一些bytes
+
+from io import BytesIO
+f_bytes = BytesIO()
+f_bytes.write("国庆节".encode('utf-8'))        #写入的不是str, 而是经过utf-8 编码的bytes
+print(f.getvalue())
+
+#和StringIO 类似，可以用一个bytes 初始化BytesIO, 然后，想读文件一样读取
+f_bytes_r = BytesIO(b'\xe5\x9b\xbd\xe5\xba\x86\xe8\x8a\x82')
+print(f_bytes_r.read())
+
+
+
