@@ -12,3 +12,12 @@ class Animal:
     def run(self):
         print("The animal is running...")
 
+    def __init__(self, type):
+        self.__type = type
+
+    def get_type(self):
+        return self.__type
+
+    def set_type(self, type):
+        self.__type = type
+
