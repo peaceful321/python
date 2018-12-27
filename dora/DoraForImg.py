@@ -8,7 +8,7 @@ secretKey = accountMgr.getSecretKey()
 
 def waterMark():
     '''
-    已上传的图片打水印
+    已上传的图片打水印 
     :return: 
     '''
 
