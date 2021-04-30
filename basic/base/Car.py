@@ -7,6 +7,9 @@
 # @Software: PyCharm
 
 
+'''
+定义一个汽车类 Car
+'''
 class Car:
 
     def __init__(self, type, carName, size):
